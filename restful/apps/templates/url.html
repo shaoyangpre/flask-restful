@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <button class="get_url">支付</button>
+      <button class="get_tuikuang">退款</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+
+    $('.get_url').click(function(){
+        $.ajax({
+            type: "POST",
+            //请求的媒体类型
+            contentType: "json",
+            //请求地址
+            url: "/v1/user/get_url",
+            //数据，json字符串
+            data: {},
+            //请求成功
+            success: function (result) {
+                data = JSON.parse(result)
+                window.location.href = data.pay_url
+            }
+        })
+    })
+
+    $('.get_tuikuang').click(function(){
+        $.ajax({
+            type: "POST",
+            //请求的媒体类型
+            contentType: "json",
+            //请求地址
+            url: "/v1/user/get_tk",
+            //数据，json字符串
+            data: {},
+            //请求成功
+            success: function (result) {
+                console.log(result)
+            }
+        })
+    })
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <button class="aa">dia</button>
+
+
+
+</body>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+
+            $('.aa').click(function () {
+                alert(11)
+                $.post('http://127.0.0.1:5000/v1/book/ajax',{a:1},function () {
+                    console.log(111)
+                })
+            })
+</script>
+</html>
